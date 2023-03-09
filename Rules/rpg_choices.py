@@ -179,6 +179,6 @@ class WeaponAdept(Class):
         bonus = "+5 de dano em Armas de Fogo, multiplicador de vida x6"
         skills = """Perícias:
                         - 4 em Armas de Fogo
-                        - 2 em Ataque Estratégico
-                        - 2 em Briga"""
+                        - 2 em Ataque Poderoso
+                        - 1 em Briga"""
         super().__init__(name, bonus, skills)

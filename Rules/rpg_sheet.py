@@ -26,50 +26,92 @@ class Person:
                f'\nPerception: {self.per}'
 
     def update_force(self, force):
-        self.force = force
+        self.force += force
 
     def update_dex(self, dex):
-        self.dex = dex
+        self.dex += dex
 
     def update_cons(self, cons):
-        self.cons = cons
+        self.cons += cons
 
     def update_inte(self, inte):
-        self.inte = inte
+        self.inte += inte
 
     def update_per(self, per):
-        self.per = per
+        self.per += per
 
     def update_wp(self, wp):
-        self.wp = wp
+        self.wp += wp
 
     def update_fa(self, fa):
-        self.fa = fa
+        self.fa += fa
 
     def update_br(self, br):
-        self.br = br
+        self.br += br
 
     def update_mag(self, mag):
-        self.mag = mag
+        self.mag += mag
 
     def update_ale(self, ale):
-        self.ale = ale
+        self.ale += ale
 
     def update_st(self, st):
-        self.st = st
+        self.st += st
 
     def update_pa(self, pa):
-        self.pa = pa
+        self.pa += pa
 
     def update_dro(self, dro):
-        self.dro = dro
+        self.dro += dro
 
-    def sheet_atributtes(self):
+    def sheet_atributtes(self, race):
+        if race == 1:
+            self.force += 2
+            self.cons += 2
+        elif race == 2:
+            self.dex += 2
+            self.inte += 1
+            self.per += 1
+        elif race == 3:
+            self.inte += 1
+        elif race == 4:
+            self.force += 2
+            self.cons += 1
+        elif race == 5:
+            self.force += 2
+            self.cons += 2
+
         person_atributtes = {'Strength': self.force, 'Dexterity': self.dex, 'Constituition': self.cons,
                              'Intelligence': self.inte, 'Perception': self.per}
+
         return '\n'.join([f"{i} = {person_atributtes[i]}" for i in person_atributtes])
 
-    def sheet_skills(self):
+    def sheet_skills(self, classe):
+        if classe == 1:
+            self.dro = 3
+            self.st = 2
+            self.fa = 2
+        elif classe == 2:
+            self.mag = 4
+            self.fa = 1
+            self.wp = 1
+        elif classe == 3:
+            self.br = 4
+            self.pa = 3
+        elif classe == 4:
+            self.wp = 3
+            self.pa = 3
+            self.fa = 1
+        elif classe == 5:
+            self.mag = 3
+            self.st = 2
+            self.fa = 1
+            self.wp = 1
+        elif classe == 6:
+            self.fa = 4
+            self.pa = 2
+            self.br = 1
+
         person_skills = {'White Weapons': self.wp, 'Firearms': self.fa, 'Brawl': self.br,
                          'Magic': self.mag, 'Alertness': self.ale, 'Strategic Attack': self.st,
                          'Power Attack': self.pa, 'Drones': self.dro}
@@ -104,13 +146,6 @@ class Person:
         mana = (self.inte * 5) * _mana
         return f'Total Life: {life}' \
                f'\nTotal Mana: {mana}'
-
-    def initial_sheet(self, classe_1, classe):
-        classe_1 = classe_1
-        classe = classe
-        print(self.sheet_atributtes())
-        print(self.sheet_skills())
-        print(self.sheet_status(classe))
 
 
 class NPC:

@@ -52,8 +52,7 @@ def start_menu():
 '''
 
 
-def initial_menu():
-    choices = {}
+def race_menu():
     print('Welcome!'
           '\nYour journey starts here...'
           '\nYour first choice will be your Race.'
@@ -94,33 +93,31 @@ def initial_menu():
     while True:
         choice1 = int(input("What number do you choose? "))
         if choice1 == 1:
-            choices['race'] = "Dwarf"
             sleep(1)
             print(rpg_choices.Dwarf())
             break
         elif choice1 == 2:
-            choices['race'] = "Elf"
             sleep(1)
             print(rpg_choices.Elf())
             break
         elif choice1 == 3:
-            choices['race'] = "Human"
             sleep(1)
             print(rpg_choices.Human())
             break
         elif choice1 == 4:
-            choices['race'] = "Ork"
             sleep(1)
             print(rpg_choices.Ork())
             break
         elif choice1 == 5:
-            choices['race'] = "Troll"
             sleep(1)
             print(rpg_choices.Troll())
             break
         else:
             print('Invalid Option. Try again.')
+    return choice1
 
+
+def classe_menu():
     print('==' * 60)
 
     print("Let's go to your second choice, choose your class from the following options:")
@@ -159,38 +156,29 @@ def initial_menu():
     while True:
         choice2 = int(input("What number do you choose? "))
         if choice2 == 1:
-            choices['class'] = "Fusor"
             sleep(1)
             print(rpg_choices.Fusor())
             break
         elif choice2 == 2:
-            choices['class'] = "Mage"
             sleep(1)
             print(rpg_choices.Mage())
             break
         elif choice2 == 3:
-            choices['class'] = "Martial Adept"
             sleep(1)
             print(rpg_choices.MartialAdept())
             break
         elif choice2 == 4:
-            choices['class'] = "Street Samurai"
             sleep(1)
             print(rpg_choices.StreetSamurai())
             break
         elif choice2 == 5:
-            choices['class'] = "Urban Xaman"
             sleep(1)
             print(rpg_choices.UrbanXaman())
             break
         elif choice2 == 6:
-            choices['class'] = "Weapon Adept"
             sleep(1)
             print(rpg_choices.WeaponAdept())
             break
         else:
             print('Invalid Option. Try again.')
-
-    return f"{choices}"
-
-
+    return choice2
