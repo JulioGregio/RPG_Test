@@ -82,7 +82,7 @@ class Person:
             _class += 8
         elif class_person in 'Fusor':
             _class += 5
-        elif class_person in 'Xaman':
+        elif class_person in 'Uraban Xaman':
             _class += 4
         elif class_person in 'Mage':
             _class += 4
@@ -104,6 +104,13 @@ class Person:
         mana = (self.inte * 5) * _mana
         return f'Total Life: {life}' \
                f'\nTotal Mana: {mana}'
+
+    def initial_sheet(self, classe_1, classe):
+        classe_1 = classe_1
+        classe = classe
+        print(self.sheet_atributtes())
+        print(self.sheet_skills())
+        print(self.sheet_status(classe))
 
 
 class NPC:

@@ -192,3 +192,5 @@ def initial_menu():
             print('Invalid Option. Try again.')
 
     return f"{choices}"
+
+

@@ -1,3 +1,5 @@
 from Rules import rpg_menus
+from Rules import rpg_sheet
 
-print(rpg_menus.initial_menu())
+eu = rpg_menus.initial_menu()
+print(rpg_sheet.initial_sheet())
