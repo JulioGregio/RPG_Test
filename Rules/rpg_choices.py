@@ -112,16 +112,16 @@ class Fusor(Class):
         super().__init__(name, bonus, skills)
 
 
-class Xaman(Class):
+class UrbanXaman(Class):
     """
-    Classe de personagem "Xamã".
+    Classe de personagem "Urban Xaman".
     """
 
     def __init__(self):
         """
-        Cria um novo "Xamã".
+        Cria um novo "Urban Xaman".
         """
-        name = "Xaman"
+        name = "Urban Xaman"
         bonus = "+3 de dano com o companheiro, +3 de dano com Magia, multiplicador de vida x4"
         skills = """Perícias:
                      - 3 em Magia
