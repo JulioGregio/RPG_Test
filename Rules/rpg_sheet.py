@@ -64,7 +64,7 @@ class Person:
     def update_dro(self, dro):
         self.dro += dro
 
-    def sheet_atributtes(self, race):
+    def sheet_atributtes(self, race=None):
         if race == 1:
             self.force += 2
             self.cons += 2
@@ -81,12 +81,12 @@ class Person:
             self.force += 2
             self.cons += 2
 
-        person_atributtes = {'Strength': self.force, 'Dexterity': self.dex, 'Constituition': self.cons,
+        person_atributtes = {'Strength': self.force, 'Dexterity': self.dex, 'Constitution': self.cons,
                              'Intelligence': self.inte, 'Perception': self.per}
 
         return '\n'.join([f"{i} = {person_atributtes[i]}" for i in person_atributtes])
 
-    def sheet_skills(self, classe):
+    def sheet_skills(self, classe=None):
         if classe == 1:
             self.dro = 3
             self.st = 2
@@ -168,6 +168,6 @@ class NPC:
         self.dex = random.randint(1, 5)
         self.cons = random.randint(1, 5)
 
-        npc_atributtes = {'Strength': self.force, 'Dexterity': self.dex, 'Constituition': self.cons}
+        npc_atributtes = {'Strength': self.force, 'Dexterity': self.dex, 'Constitution': self.cons}
         print('==' * 15)
         return '\n'.join([f"{i} = {npc_atributtes[i]}" for i in npc_atributtes])

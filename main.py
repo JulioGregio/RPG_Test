@@ -20,3 +20,10 @@ elif classe == 5:
     print(person.sheet_status('Urban Xaman'))
 elif classe == 6:
     print(person.sheet_status('Weapon Adept'))
+list = rpg_menus.upgrade_initial()
+person.update_force(list['Strength'])
+person.update_dex(list['Dexterity'])
+person.update_cons(list['Constitution'])
+person.update_inte(list['Intelligence'])
+person.update_per(list['Perception'])
+print(person.sheet_atributtes())

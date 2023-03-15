@@ -1,7 +1,6 @@
 from Rules import rpg_choices
 from time import sleep
 
-
 '''
 Neste ponto eu poderia ter feito mais simples e direto ao ponto, para evitar de ficar rolando
 terminal pra saber algo, e de certa forma eu já poderia tirar a escolha de raça na sequência
@@ -137,7 +136,7 @@ def classe_menu():
           "\nIt uses powerful blows and practically superhuman abilities resulting from its hard training.")
     sleep(1)
     print("\n"
-          "[4] - STREET SAMURAI - He can take massive amounts of damage and remain on his feet, dealing "
+          "\n[4] - STREET SAMURAI - He can take massive amounts of damage and remain on his feet, dealing "
           "\ndevastating damage to his enemies. He is typically augmented with hefty amounts of cyberware "
           "\nand bionics, which makes him exceptionally tough and dangerous in physical and armed combat. "
           "\nAlthough he is fierce and deadly, he often has a code of honor: it may be a code understandable "
@@ -182,3 +181,66 @@ def classe_menu():
         else:
             print('Invalid Option. Try again.')
     return choice2
+
+
+def upgrade_initial():
+    print('Now you have 7 points to upgrade your attributes.'
+          '\nAlso you have 10 skills points to upgrade your skills, use wisely.')
+    force = 0
+    dex = 0
+    cons = 0
+    inte = 0
+    per = 0
+    cont = 0
+    while True:
+        att = int(input("Let's start from the attributes,which one do you wan to to increase?"
+                        "\n[1] - Strength"
+                        "\n[2] - Dexterity"
+                        "\n[3] - Constitution"
+                        "\n[4] - Intelligence"
+                        "\n[5] - Perception"
+                        "\nWhat is your choice? "))
+        if att == 1:
+            s = int(input('How many points do you want to put in Strength: '))
+            force = s
+            cont += s
+            if cont == 7:
+                break
+            else:
+                continue
+        elif att == 2:
+            d = int(input('How many points do you want to put in Dexterity: '))
+            dex = d
+            cont += d
+            if cont == 7:
+                break
+            else:
+                continue
+        elif att == 3:
+            c = int(input('How many points do you want to put in Constitution: '))
+            cons = c
+            cont += c
+            if cont == 7:
+                break
+            else:
+                continue
+        elif att == 4:
+            i = int(input('How many points do you want to put in Intelligence: '))
+            inte = i
+            cont += i
+            if cont == 7:
+                break
+            else:
+                continue
+        elif att == 5:
+            p = int(input('How many points do you want to put in Perception: '))
+            cont = p
+            per += p
+            if cont == 7:
+                break
+            else:
+                continue
+        else:
+            print('Invalid Option. Try Again.')
+    return {'Strength': int(force), 'Dexterity': int(dex),
+            'Constitution': int(cons), 'Intelligence': int(inte), 'Perception': int(per)}
