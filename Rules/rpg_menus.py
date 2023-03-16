@@ -184,15 +184,17 @@ def classe_menu():
 
 
 def upgrade_initial():
-    print('Now you have 7 points to upgrade your attributes.'
-          '\nAlso you have 10 skills points to upgrade your skills, use wisely.')
+    print('==' * 60)
+    print('Now you have 10 points to upgrade your attributes.'
+          '\nAlso you have 12 skills points to upgrade your skills, use wisely.')
     force = 0
     dex = 0
     cons = 0
     inte = 0
     per = 0
     cont = 0
-    while True:
+    while cont < 10:
+        print('==' * 60)
         att = int(input("Let's start from the attributes,which one do you wan to to increase?"
                         "\n[1] - Strength"
                         "\n[2] - Dexterity"
@@ -202,45 +204,85 @@ def upgrade_initial():
                         "\nWhat is your choice? "))
         if att == 1:
             s = int(input('How many points do you want to put in Strength: '))
-            force = s
+            force += s
             cont += s
-            if cont == 7:
-                break
-            else:
-                continue
         elif att == 2:
             d = int(input('How many points do you want to put in Dexterity: '))
-            dex = d
+            dex += d
             cont += d
-            if cont == 7:
-                break
-            else:
-                continue
         elif att == 3:
             c = int(input('How many points do you want to put in Constitution: '))
-            cons = c
+            cons += c
             cont += c
-            if cont == 7:
-                break
-            else:
-                continue
         elif att == 4:
             i = int(input('How many points do you want to put in Intelligence: '))
             inte = i
             cont += i
-            if cont == 7:
-                break
-            else:
-                continue
         elif att == 5:
             p = int(input('How many points do you want to put in Perception: '))
-            cont = p
+            cont += p
             per += p
-            if cont == 7:
-                break
-            else:
-                continue
         else:
             print('Invalid Option. Try Again.')
+
+    wp = 0
+    fa = 0
+    br = 0
+    mag = 0
+    ale = 0
+    st = 0
+    pa = 0
+    dro = 0
+    cont1 = 0
+    while cont1 < 12:
+        print('==' * 60)
+        att = int(input("Now let's go to your skills,which one do you wan to to increase?"
+                        "\n[1] - White Weapons"
+                        "\n[2] - Firearms"
+                        "\n[3] - Brawl"
+                        "\n[4] - Magic"
+                        "\n[5] - Alertness"
+                        "\n[6] - Strategic Attack"
+                        "\n[7] - Power Attack"
+                        "\n[8] - Drones"
+                        "\nWhat is your choice? "))
+        if att == 1:
+            w = int(input('How many points do you want to put in White Weapons: '))
+            wp += w
+            cont1 += w
+        elif att == 2:
+            f = int(input('How many points do you want to put in Firearms: '))
+            fa += f
+            cont1 += f
+        elif att == 3:
+            b = int(input('How many points do you want to put in Brawl: '))
+            br += b
+            cont1 += b
+        elif att == 4:
+            m = int(input('How many points do you want to put in Magic: '))
+            mag += m
+            cont1 += m
+        elif att == 5:
+            a = int(input('How many points do you want to put in Alertness: '))
+            cont1 += a
+            ale += a
+        elif att == 6:
+            sta = int(input('How many points do you want to put in Strategic Attack: '))
+            cont1 += sta
+            st += sta
+        elif att == 7:
+            pw = int(input('How many points do you want to put in Power Attack: '))
+            cont1 += pw
+            pa += pw
+        elif att == 8:
+            dr = int(input('How many points do you want to put in Drones: '))
+            cont1 += dr
+            dro += dr
+        else:
+            print('Invalid Option. Try Again.')
+    print('==' * 60)
+
     return {'Strength': int(force), 'Dexterity': int(dex),
-            'Constitution': int(cons), 'Intelligence': int(inte), 'Perception': int(per)}
+            'Constitution': int(cons), 'Intelligence': int(inte), 'Perception': int(per),
+            'White Weapons': int(wp), 'Firearms': int(fa), 'Brawl': int(br), 'Magic': int(mag),
+            'Alertness': int(ale), 'Strategic Attack': int(st), 'Power Attack': int(pa), 'Drones': int(dro)}

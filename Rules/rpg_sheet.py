@@ -136,16 +136,24 @@ class Person:
             _class = 5
 
         if class_person in 'Xaman':
-            _mana = 2
-        elif class_person in 'Mage':
             _mana = 3
+        elif class_person in 'Mage':
+            _mana = 4
         else:
-            _mana = 1
+            _mana = 2
 
         life = (self.force + (self.cons * 2)) * _class
         mana = (self.inte * 5) * _mana
         return f'Total Life: {life}' \
                f'\nTotal Mana: {mana}'
+
+    def basic_attack(self):
+        # TODO
+        pass
+
+    def class_attack(self):
+        # TODO
+        pass
 
 
 class NPC:
