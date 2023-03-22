@@ -147,6 +147,14 @@ class Person:
         return f'Total Life: {life}' \
                f'\nTotal Mana: {mana}'
 
+
+    def combat_stats(self, armor, weapon1, weapon2=None):
+        ar = armor
+        basic_attack = weapon1
+        basic_attack2 = weapon2
+        # TODO
+        pass
+
     def basic_attack(self):
         # TODO
         pass

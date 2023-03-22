@@ -182,3 +182,89 @@ class WeaponAdept(Class):
                         - 2 em Ataque Poderoso
                         - 1 em Briga"""
         super().__init__(name, bonus, skills)
+
+
+class ItemsPerson:
+    def __init__(self, name=None, damage=None, protect=None, bonuses=None, special=None):
+        self.name = name
+        self.damage = damage
+        self.protect = protect
+        self.bonuses = bonuses
+        self.special = special
+
+    def __str__(self):
+        return f"Name: {self.name}" \
+               f"\nDamage: {self.damage}" \
+               f"\nProtect: {self.protect}" \
+               f"\nBonuses: {self.bonuses}" \
+               f"\nSpecial: {self.special}"
+
+
+class BasicAxe(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Axe"
+        self.damage = "1d8 + Strength"
+
+
+class BasicSword(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Sword"
+        self.damage = "1d6 + Strength"
+
+
+class BasicHammer(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Hammer"
+        self.damage = "1d8 + Strength"
+
+
+class BasicBowl(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Bowl"
+        self.damage = "1d6 + Perception"
+
+
+class BasicPistol(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Pistol"
+        self.damage = "2d6"
+
+
+class BasicRifle(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Rifle"
+        self.damage = "2d8"
+
+
+class BasicShotgun(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Shotgun"
+        self.damage = "2d8"
+
+
+class BasicLightArmor(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Light Armor"
+        self.protect = "4"
+
+
+class BasicMediumArmor(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Medium Armor"
+        self.protect = "6"
+
+
+class BasicHeavyArmor(ItemsPerson):
+    def __init__(self):
+        super().__init__()
+        self.name = "Heavy Armor"
+        self.protect = "8"
